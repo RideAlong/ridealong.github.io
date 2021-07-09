@@ -1,0 +1,8 @@
+docs_list_title: All Pages
+docs:
+- title: Gear
+  url: /gear.html
+- title: Bike
+  url: /bike.html
+- title: Software
+  url: /software.html

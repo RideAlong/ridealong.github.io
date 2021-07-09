@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="theme-color" content="#88130F" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{ '/css/w3.css' | relative_url }}">
+	<link rel="stylesheet" type="text/css" href="{{ '/css/all.min.css' | relative_url }}">
+	<link rel="stylesheet" type="text/css" href="{{ '/css/ridealong.css' | relative_url }}">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
+	
+	{% seo %}
+</head>
+
+<body class="ra-dark-bg">
+	{% assign navlist = site.data.pages.docs %}
+	<div class="w3-top">
+		<!-- Navbar -->
+		<div class="w3-bar w3-card w3-left-align w3-large ra-bike-red">
+			<a id="navBtn" class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-large ra-bike-red ra-hover-sunset-gold w3-hover-opacity-off" href="javascript:void(0);" onclick="toggleMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+			<a href="{{ '/' | relative_url }}" class="w3-bar-item w3-button w3-padding-large ra-hover-sunset-gold w3-hover-opacity-off {% if page.url == '/' %} ra-sunset-gold {% endif %}">{{ site.title }}</a>
+			{% for item in navlist %}
+			<a href="{{ item.url | relative_url | remove: '.html' }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small ra-hover-sunset-gold w3-hover-opacity-off {% if page.url == item.url  %}ra-sunset-gold{% endif %}">{{ item.title }}</a>
+			{% endfor %}
+		</div>
+	  
+		<!-- Nav on small screens -->
+		<div id="navMenu" class="w3-bar-block w3-card w3-hide w3-hide-large w3-hide-medium w3-large ra-bike-red" >
+			{% for item in navlist %}
+			<a href="{{ item.url | relative_url | remove: '.html' }}" class="w3-bar-item w3-button w3-padding-large ra-hover-sunset-gold w3-hover-opacity-off {% if page.url == item.url %}ra-sunset-gold{% endif %}">{{ item.title }}</a>
+			{% endfor %}
+		</div>
+	</div>
+
+	<header class="w3-container w3-center header-bg" style="padding-top:100px; padding-bottom: 20px;">
+		<a href="{{ '/' | relative_url }}" class="w3-hover-opacity-off"><img class="ra-logo" src="{{ '/img/logo_512px.png' | relative_url }}" alt="{{ site.title }} Logo"></a>
+		<p class="w3-xlarge">{{ page.title }}</p>
+	</header>
+	
+	<div class="w3-row-padding w3-padding-32 w3-container">
+		<div class="w3-content">
+		{{ content }}
+		</div>
+	</div>
+
+	<div class="w3-container w3-center w3-opacity w3-padding-16">
+		<h1 class="w3-margin w3-large">Ride safe!</h1>
+	</div>
+
+	<footer class="w3-container w3-padding-32 w3-center header-bg">
+		<div class="w3-opacity">
+			<div class="w3-xxlarge w3-padding-16">
+				<a href="https://www.youtube.com/channel/UCaKJcrzA_XQU6rrKNzlEwcw"><i class="fab fa-youtube w3-hover-opacity"></i></a>
+				<a href="https://instagram.com/ridealong.matt"><i class="fab fa-instagram w3-hover-opacity"></i></a>
+			</div>
+
+			<div class="w3-padding-16">
+				Powered by<br>
+				<a href="https://www.w3schools.com/w3css/">W3.CSS</a>, <a href="https://fontawesome.com">Fontawesome</a>
+				<p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+			</div>
+
+			<div class="w3-opacity">
+				&copy; {{ page.copyrightyear }} {{ site.title }} | <a href="imprint">Imprint</a>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Mobile Nav JS -->
+	<script>
+	var navMenu=document.getElementById("navMenu");var navBtn=document.getElementById("navBtn");function toggleMenu(){if(!menuVisible()){menuShow()}else{menuHide()}}
+	function menuVisible(){return navMenu.className.indexOf("w3-show")!=-1}
+	function menuShow(){navMenu.className+=" w3-show"}
+	function menuHide(){navMenu.className=navMenu.className.replace(" w3-show","")}
+	window.addEventListener('click',function(e){if(menuVisible()&&!navMenu.contains(e.target)&&!navBtn.contains(e.target)){menuHide()}})
+	</script>
+</body>
+</html>

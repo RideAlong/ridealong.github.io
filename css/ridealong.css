@@ -1,0 +1,48 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-mod-large-icon {font-size:200px}
+
+.header-bg {
+	background-color: #050505;
+	background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235c5c5c' fill-opacity='0.35' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.ra-bike-red,    .ra-hover-bike-red:hover    { background: #88130F !important; }
+.ra-sunset-gold, .ra-hover-sunset-gold:hover { background: #C1A47C !important; }
+.ra-sky-blue,    .ra-hover-sky-blue:hover    { background: #4CA3C8 !important; }
+.ra-dark-bg {
+	color: #fff !important;
+	background-color: #070707 !important;
+}
+
+.ra-logo {
+	width: 75%;
+	max-width: 240px;
+	min-width: 100px;
+	box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.5);
+	border-radius: 100%;
+}
+
+a:hover {
+    opacity:0.60
+}
+
+.fa, .fab, .fad, .fal, .far, .fas {
+    padding-right: 0.2em;
+}
+
+img {
+    max-width: 75%;
+}
+
+/* use for markdown alignment */
+img[src*='#left'] {
+    float: left;
+}
+img[src*='#right'] {
+    float: right;
+}
+img[src*='#center'] {
+    display: block;
+    margin: auto;
+}

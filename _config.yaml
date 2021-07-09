@@ -1,0 +1,13 @@
+title: "RideAlong"
+description: "It's all about the ride."
+
+# for brave verification
+include: 
+  - .well-known
+  
+defaults:
+  -
+    scope:
+      path: "" # all files in the project
+    values:
+      copyrightyear: "2021"
